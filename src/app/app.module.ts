@@ -13,7 +13,8 @@ import {
   MatToolbarModule,
   MatDividerModule,
   MatIconModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatListModule
 } from '@angular/material';
 
 import {AngularFireModule} from '@angular/fire';
@@ -50,7 +51,8 @@ const config = {
     MatExpansionModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

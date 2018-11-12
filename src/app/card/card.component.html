@@ -21,8 +21,14 @@
     </mat-card-content>
   </mat-card>
 -->
+<h1>Wrong Answers {{shoes.selectedOptions.selected.length}} / {{(items | async)?.length}} </h1>
+<mat-selection-list #shoes>
+  <mat-list-option *ngFor="let item of (items | async)">
+    {{item.title}} {{item.id}}
+  </mat-list-option>
+</mat-selection-list>
 
-<mat-accordion *ngFor="let item of (items | async)">
+<!-- <mat-accordion *ngFor="let item of (items | async)">
   <mat-expansion-panel>
     <mat-expansion-panel-header>
       <mat-panel-title>
@@ -35,4 +41,4 @@
     </mat-expansion-panel-header>
     <p>{{ item.description }}</p>
   </mat-expansion-panel>
-</mat-accordion>
+</mat-accordion> -->
