@@ -1,0 +1,38 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Spell Me</span> <span class="example-spacer"></span>
+    <button mat-button (click)="fetchHard()">Hard</button>
+
+    <button mat-button (click)="fetchHard()">All</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<!--
+  <mat-card class="card-spacing" *ngFor="let item of items">
+    <mat-card-content>
+      {{item.title}}
+      <button mat-icon-button (click)="speak(item.title)">
+        <mat-icon aria-label="Example icon-button with a heart icon">record_voice_over</mat-icon>
+      </button>
+      <p>
+        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+        bred for hunting.
+      </p>
+    </mat-card-content>
+  </mat-card>
+-->
+
+<mat-accordion *ngFor="let item of (items | async)">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ item.title }}
+        <button mat-icon-button (click)="speak(item.title)">
+          <mat-icon>record_voice_over</mat-icon>
+        </button>
+      </mat-panel-title>
+      <mat-panel-description> </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>{{ item.description }}</p>
+  </mat-expansion-panel>
+</mat-accordion>
